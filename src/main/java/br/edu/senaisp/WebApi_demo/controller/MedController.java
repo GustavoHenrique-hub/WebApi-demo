@@ -25,15 +25,14 @@ import jakarta.validation.Valid;
 @RequestMapping("/med")
 public class MedController {
 	
+	@Autowired
+	MedRepository repository;
 	
 	@GetMapping("/message")
 	public String message() {
 		return "Seu teste funcionou";
 	}
-	
-	
-	@Autowired
-	MedRepository repository;
+
 	
 	@GetMapping("/listar")
 	public ResponseEntity<List<Medico>> listar(){
